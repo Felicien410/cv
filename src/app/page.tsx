@@ -9,6 +9,12 @@ import { SkillBar } from "@/components/skill-bar"
 import { profileData } from "@/data/profile"
 import { Code, Mail, Phone, Github, MapPin, Calendar, ExternalLink } from "lucide-react"
 
+// Utilitaire pour les chemins d'images
+function getImagePath(path: string): string {
+  const basePath = process.env.NODE_ENV === 'production' ? '/cv' : '';
+  return `${basePath}${path}`;
+}
+
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -55,7 +61,7 @@ export default function Home() {
             <div className="relative w-40 h-40 overflow-hidden rounded-full border-4 border-blue-500 shadow-lg shadow-blue-500/20">
               <div className="absolute inset-[-0%] w-[100%] h-[120%]">
                 <Image
-                  src="/images/profile.jpg"
+                  src={getImagePath("/images/profile.jpg")}
                   alt="Photo de profil"
                   fill
                   sizes="200px"
@@ -197,7 +203,7 @@ export default function Home() {
                       {exp.company === "Bleam (SaaS)" && (
                         <div className="flex-shrink-0">
                           <Image 
-                            src="/Bleam.svg"
+                            src={getImagePath("/Bleam.svg")}
                             alt="Bleam logo"
                             width={60}
                             height={60}
@@ -209,7 +215,7 @@ export default function Home() {
                       {exp.company === "La Ruche AFL - Société par actions simplifiée" && (
                         <div className="flex-shrink-0">
                           <Image 
-                            src="/images/LaRuche.png"
+                            src={getImagePath("/images/LaRuche.png")}
                             alt="La Ruche logo"
                             width={60}
                             height={60}
@@ -279,7 +285,7 @@ export default function Home() {
               <CardContent className="p-6 flex flex-col h-full">
                 <div className="flex items-center mb-4">
                   <Image 
-                    src="/Bleam.svg"
+                    src={getImagePath("/Bleam.svg")}
                     alt="Bleam logo"
                     width={60}
                     height={60}
@@ -313,7 +319,7 @@ export default function Home() {
               <CardContent className="p-6 flex flex-col h-full">
                 <div className="flex items-center mb-4">
                   <Image 
-                    src="/images/LaRuche.png"
+                    src={getImagePath("/images/LaRuche.png")}
                     alt="La Ruche"
                     width={60}
                     height={60}
@@ -342,7 +348,7 @@ export default function Home() {
               <CardContent className="p-6 flex flex-col h-full">
                 <div className="flex items-center mb-4">
                   <Image 
-                    src="/images/42projects.jpg"
+                    src={getImagePath("/images/42projects.jpg")}
                     alt="42 Projects"
                     width={60}
                     height={60}
