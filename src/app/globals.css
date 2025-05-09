@@ -1,26 +1,149 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --magenta-400: #f472b6;
+  --magenta-500: #ec4899;
+  --magenta-600: #db2777;
+  --magenta-700: #be185d;
+  --dark-800: #1e1e1e;
+  --dark-900: #121212;
+  --dark-950: #090909;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-black text-white antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  ::selection {
+    @apply bg-pink-600 text-white;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Styles pour les sections */
+  .hero-section {
+    @apply py-20 bg-gradient-to-r from-pink-600 to-purple-800 text-white;
+  }
+  
+  .section {
+    @apply py-16;
+  }
+  
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold mb-8 relative pb-3;
+  }
+  
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-pink-600 rounded;
+  }
+  
+  /* Cards et composants */
+  .card {
+    @apply bg-zinc-900 rounded-lg shadow-lg hover:shadow-pink-900/20 transition-all duration-300 p-6 border border-zinc-800;
+  }
+  
+  .skill-bar-bg {
+    @apply w-full bg-zinc-800 rounded-full h-2.5;
+  }
+  
+  .skill-bar-fill {
+    @apply bg-gradient-to-r from-pink-500 to-purple-600 h-2.5 rounded-full transition-all duration-1000 ease-out;
+  }
+  
+  /* Boutons */
+  .btn {
+    @apply px-4 py-2 rounded-md transition-all duration-300 font-medium;
+  }
+  
+  .btn-primary {
+    @apply bg-pink-600 hover:bg-pink-700 text-white shadow hover:shadow-md;
+  }
+  
+  .btn-outline {
+    @apply border border-zinc-700 hover:border-pink-500 hover:text-pink-500;
+  }
+  
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center rounded-full bg-pink-900/30 text-pink-200 px-2.5 py-0.5 text-xs font-medium mr-2 mb-2;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Animation de pulse pour accentuer certains éléments */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Animation pour le bord rose */
+@keyframes borderGlow {
+  0%, 100% { box-shadow: 0 0 5px 0px rgba(219, 39, 119, 0.5); }
+  50% { box-shadow: 0 0 15px 2px rgba(219, 39, 119, 0.8); }
+}
+
+.animate-border-glow {
+  animation: borderGlow 2s ease-in-out infinite;
+}
+
+/* Styles des liens */
+a {
+  @apply text-pink-400 hover:text-pink-300 transition-colors;
+}
+
+/* Améliorations d'accessibilité */
+:focus {
+  @apply outline-none ring-2 ring-pink-500 ring-offset-2 ring-offset-black;
+}
+
+/* Effet de glassmorphisme */
+.glass {
+  @apply bg-zinc-900/70 backdrop-blur-md border border-zinc-800;
+}
+
+/* Effet de néon pour le texte */
+.neon-text {
+  @apply text-pink-500;
+  text-shadow: 0 0 5px theme('colors.pink.500'), 
+               0 0 10px theme('colors.pink.500');
+}
+
+/* Glowing border */
+.glow-border {
+  @apply border border-pink-500;
+  box-shadow: 0 0 10px theme('colors.pink.500'),
+              inset 0 0 5px theme('colors.pink.500');
+}
+
+/* Grid pattern background */
+.grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(219, 39, 119, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(219, 39, 119, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
 }
