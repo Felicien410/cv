@@ -1,12 +1,12 @@
 export const profileData = {
   name: "Félicien Catteau",
   role: "Développeur Full Stack | Entrepreneur",
-  about: "Développeur spécialisé en webscraping et IA, avec une forte expérience entrepreneuriale. Actuellement étudiant à 42 Nice (niveau équivalent Bac+3) et à la recherche d'un stage. Passionné par le développement de solutions innovantes et la création d'entreprises tech.",
+  about: "Développeur spécialisé en webscraping et IA, avec une forte expérience entrepreneuriale. Actuellement étudiant à l'école 42 (niveau équivalent Bac+3) et à la recherche d'un stage. Passionné par le développement de solutions innovantes et la création d'entreprises tech.",
   dateOfBirth: "08/10/2003",
   email: "felicienctt41@gmail.com",
   phone: "07 79 59 29 95",
   github: "https://github.com/Felicien410",
-  location: "Nice, France",
+  location: "Lille, France",
   skills: {
     programming: [
       { name: "C", level: 90 },
@@ -50,6 +50,7 @@ export const profileData = {
         "Vente de dizaines d'articles de marque par mois sur des plateformes de seconde main",
         "Sourcing chez des fournisseurs internationaux",
         "Coordination d'une équipe de 4 prestataires pour les taches manuelles (photographie, expédition)",
+        "Organisation ne notre espace de stockage et gestion des stocks dans notre entrepôt",
       ]
     },
     {
@@ -67,13 +68,13 @@ export const profileData = {
   ],
   education: [
     {
-      institution: "Lycée",
+      institution: "Lycée Croix Blanche, Bondues (59)",
       degree: "Baccalauréat",
       period: "2021",
-      description: "Obtention du baccalauréat"
+      description: "Obtention du baccalauréat avec mention"
     },
     {
-      institution: "École 42 Nice",
+      institution: "École 42",
       degree: "Formation en développement informatique",
       period: "2021 - Présent",
       description: "Ecole de programmation suivant une pédagogie par projets et apprentissage par les pairs. Validation du tronc commun équivalent à un niveau Bac+3."
