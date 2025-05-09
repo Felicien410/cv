@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { SkillBar } from "@/components/skill-bar"
 import { profileData } from "@/data/profile"
-import { Code, Mail, Phone, Github, MapPin, Calendar, ExternalLink, ChevronRight } from "lucide-react"
+import { Code, Mail, Phone, Github, MapPin, Calendar, ExternalLink } from "lucide-react"
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -54,6 +54,7 @@ export default function Home() {
           <div className="flex justify-center mb-8">
             <Image
               src="/images/profile.jpg"
+              alt="Photo de profil"
               width={150}
               height={150}
               className="rounded-full border-4 border-blue-500 shadow-lg shadow-blue-500/20"
