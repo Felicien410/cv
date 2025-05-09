@@ -6,7 +6,7 @@ export const profileData = {
   email: "felicienctt41@gmail.com",
   phone: "07 79 59 29 95",
   github: "https://github.com/Felicien410",
-  location: "Nice, France",
+  location: "Lille, France",
   skills: {
     programming: [
       { name: "C", level: 90 },
@@ -26,7 +26,8 @@ export const profileData = {
       { name: "GitHub", level: 80 },
       { name: "IA", level: 75 },
       { name: "Travail d'équipe", level: 85 },
-      { name: "Gestion de projet", level: 85 }
+      { name: "Gestion de projet", level: 85 },
+      { name: "Anglais", level: 70 },
     ]
   },
   experience: [
@@ -42,7 +43,7 @@ export const profileData = {
       ]
     },
     {
-      title: "Fondateur & Directeur Général",
+      title: "Co-Fondateur & Directeur Général",
       company: "La Ruche AFL - Société par actions simplifiée",
       period: "Décembre 2023 - Présent",
       description: "Co-fondateur (3 associés) et direction d'une entreprise spécialisée dans la réhabilitation et vente de vêtements de seconde main au détail en ligne.",
@@ -67,10 +68,10 @@ export const profileData = {
   ],
   education: [
     {
-      institution: "Lycée",
+      institution: "Lycée Croix Blanche, Bondues (59)",
       degree: "Baccalauréat",
       period: "2021",
-      description: "Obtention du baccalauréat"
+      description: "Obtention du baccalauréat avec mention"
     },
     {
       institution: "École 42 Nice",

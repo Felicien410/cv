@@ -53,14 +53,16 @@ export default function Home() {
           {/* Photo de profil centrée et parfaitement ronde */}
           <div className="flex justify-center mb-8">
   <div className="relative w-40 h-40 overflow-hidden rounded-full border-4 border-blue-500 shadow-lg shadow-blue-500/20">
-    <Image
-      src="/images/profile.jpg"
-      alt="Photo de profil"
-      fill
-      sizes="160px"
-      className="object-cover scale-[1] origin-center" 
-      priority
-    />
+    <div className="absolute inset-[-0%] w-[100%] h-[120%]">
+      <Image
+        src="/images/profile.jpg"
+        alt="Photo de profil"
+        fill
+        sizes="200px"
+        className="object-cover" 
+        priority
+      />
+    </div>
   </div>
 </div>
           {/* Informations personnelles */}
@@ -102,13 +104,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
             <div className="md:col-span-2 bg-zinc-900 border-zinc-800 p-8 rounded-lg shadow-md">
               <p className="text-lg mb-4 text-gray-300">
-                Passionné par la technologie et l&apos;entrepreneuriat, je suis un développeur full stack spécialisé dans le webscraping et l&apos;IA, 
-                actuellement en formation à l&apos;École 42 Nice. À seulement {calculateAge()} ans, j&apos;ai déjà créé plusieurs entreprises 
-                dans le domaine de la vente en ligne et du développement de solutions SaaS.
+                À {calculateAge()} ans, j&apos;ai déjà créé plusieurs entreprises 
+                dans le domaine de la vente en ligne et du développement de solutions SaaS. J'adore faire des projets en équipe où on apporte des solutions à des problèmes. Au-delà de l'aspect technique, je m'intéresse également aux stratégies business et à l'expérience utilisateur.
               </p>
               <p className="text-lg text-gray-300">
-                Je recherche actuellement un stage pour mettre à profit mes compétences techniques et mon esprit d&apos;initiative.
-              </p>
+              Je recherche actuellement un stage dans une entreprise innovante où je pourrai mettre à profit mes compétences techniques, mon esprit d'initiative et ma créativité. Mon objectif est de contribuer à des projets stimulants tout en continuant à développer mes connaissances et compétences dans un environnement professionnel.</p>
             </div>
             <Card className="bg-zinc-900 border-zinc-800 shadow-md">
               <CardContent className="p-6">
@@ -300,7 +300,7 @@ export default function Home() {
                 </a>
                 <div className="mt-auto">
                   <Badge variant="default" className="bg-blue-900/30 text-blue-200 mr-2 mb-2">JavaScript</Badge>
-                  <Badge variant="default" className="bg-blue-900/30 text-blue-200 mr-2 mb-2">Python</Badge>
+                  <Badge variant="default" className="bg-blue-900/30 text-blue-200 mr-2 mb-2">Electron JS</Badge>
                   <Badge variant="default" className="bg-blue-900/30 text-blue-200 mr-2 mb-2">API REST</Badge>
                   <Badge variant="default" className="bg-blue-900/30 text-blue-200 mr-2 mb-2">IA</Badge>
                 </div>
