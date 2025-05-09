@@ -22,11 +22,11 @@ export function SkillBar({ skill, level }: SkillBarProps) {
     <div className="mb-4">
       <div className="flex justify-between mb-2">
         <span className="font-medium text-gray-200">{skill}</span>
-        <span className="text-pink-400">{level}%</span>
+        <span className="text-blue-300">{level}%</span>
       </div>
       <div className="w-full bg-zinc-800 rounded-full h-2.5">
         <div 
-          className="bg-gradient-to-r from-pink-500 to-purple-600 h-2.5 rounded-full transition-all duration-1000 ease-out"
+          className="bg-gradient-to-r from-blue-400 to-cyan-300 h-2.5 rounded-full transition-all duration-1000 ease-out"
           style={{ width: `${width}%` }}
         ></div>
       </div>

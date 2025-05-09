@@ -3,10 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --magenta-400: #f472b6;
-  --magenta-500: #ec4899;
-  --magenta-600: #db2777;
-  --magenta-700: #be185d;
+  --blue-200: #bfdbfe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --cyan-300: #67e8f9;
   --dark-800: #1e1e1e;
   --dark-900: #121212;
   --dark-950: #090909;
@@ -33,7 +35,7 @@
 @layer components {
   /* Styles pour les sections */
   .hero-section {
-    @apply py-20 bg-gradient-to-r from-pink-600 to-purple-800 text-white;
+    @apply py-20 bg-gradient-to-r from-blue-600 to-blue-900 text-white;
   }
   
   .section {
@@ -46,12 +48,12 @@
   
   .section-title::after {
     content: "";
-    @apply absolute bottom-0 left-0 w-16 h-1 bg-pink-600 rounded;
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-blue-400 rounded;
   }
   
   /* Cards et composants */
   .card {
-    @apply bg-zinc-900 rounded-lg shadow-lg hover:shadow-pink-900/20 transition-all duration-300 p-6 border border-zinc-800;
+    @apply bg-zinc-900 rounded-lg shadow-lg hover:shadow-blue-400/20 transition-all duration-300 p-6 border border-zinc-800;
   }
   
   .skill-bar-bg {
@@ -59,7 +61,7 @@
   }
   
   .skill-bar-fill {
-    @apply bg-gradient-to-r from-pink-500 to-purple-600 h-2.5 rounded-full transition-all duration-1000 ease-out;
+    @apply bg-gradient-to-r from-blue-400 to-cyan-300 h-2.5 rounded-full transition-all duration-1000 ease-out;
   }
   
   /* Boutons */
@@ -68,16 +70,16 @@
   }
   
   .btn-primary {
-    @apply bg-pink-600 hover:bg-pink-700 text-white shadow hover:shadow-md;
+    @apply bg-blue-500 hover:bg-blue-600 text-white shadow hover:shadow-md;
   }
   
   .btn-outline {
-    @apply border border-zinc-700 hover:border-pink-500 hover:text-pink-500;
+    @apply border border-zinc-700 hover:border-blue-400 hover:text-blue-300;
   }
   
   /* Badges */
   .badge {
-    @apply inline-flex items-center rounded-full bg-pink-900/30 text-pink-200 px-2.5 py-0.5 text-xs font-medium mr-2 mb-2;
+    @apply inline-flex items-center rounded-full bg-blue-900/30 text-blue-200 px-2.5 py-0.5 text-xs font-medium mr-2 mb-2;
   }
 }
 
@@ -91,6 +93,24 @@
   animation: fadeIn 0.5s ease-out forwards;
 }
 
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.5s ease-out forwards;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.5s ease-out forwards;
+}
+
 /* Animation de pulse pour accentuer certains éléments */
 @keyframes pulse {
   0%, 100% { opacity: 1; }
@@ -101,24 +121,76 @@
   animation: pulse 3s ease-in-out infinite;
 }
 
-/* Animation pour le bord rose */
+/* Animation pour le bord bleu */
 @keyframes borderGlow {
-  0%, 100% { box-shadow: 0 0 5px 0px rgba(219, 39, 119, 0.5); }
-  50% { box-shadow: 0 0 15px 2px rgba(219, 39, 119, 0.8); }
+  0%, 100% { box-shadow: 0 0 5px 0px rgba(96, 165, 250, 0.5); }
+  50% { box-shadow: 0 0 15px 2px rgba(96, 165, 250, 0.8); }
 }
 
 .animate-border-glow {
   animation: borderGlow 2s ease-in-out infinite;
 }
 
+/* Animation de flottement */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animation de rotation lente */
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-rotate-slow {
+  animation: rotateSlow 20s linear infinite;
+}
+
+/* Animation d'ondulation du texte */
+@keyframes wave {
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+}
+
+.animate-wave-text {
+  background: linear-gradient(90deg, #60a5fa, #67e8f9, #60a5fa);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: wave 3s linear infinite;
+}
+
+/* Animation de déplacement de particules */
+@keyframes particleMove {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(2px, 2px); }
+  50% { transform: translate(0, 4px); }
+  75% { transform: translate(-2px, 2px); }
+  100% { transform: translate(0, 0); }
+}
+
+.animate-particle {
+  animation: particleMove 4s ease-in-out infinite;
+}
+
 /* Styles des liens */
 a {
-  @apply text-pink-400 hover:text-pink-300 transition-colors;
+  @apply text-blue-300 hover:text-blue-200 transition-colors;
 }
 
 /* Améliorations d'accessibilité */
 :focus {
-  @apply outline-none ring-2 ring-pink-500 ring-offset-2 ring-offset-black;
+  @apply outline-none ring-2 ring-blue-400 ring-offset-2 ring-offset-black;
 }
 
 /* Effet de glassmorphisme */
@@ -128,22 +200,124 @@ a {
 
 /* Effet de néon pour le texte */
 .neon-text {
-  @apply text-pink-500;
-  text-shadow: 0 0 5px theme('colors.pink.500'), 
-               0 0 10px theme('colors.pink.500');
+  @apply text-blue-400;
+  text-shadow: 0 0 5px theme('colors.blue.400'), 
+               0 0 10px theme('colors.blue.400'),
+               0 0 15px theme('colors.blue.500');
 }
 
 /* Glowing border */
 .glow-border {
-  @apply border border-pink-500;
-  box-shadow: 0 0 10px theme('colors.pink.500'),
-              inset 0 0 5px theme('colors.pink.500');
+  @apply border border-blue-400;
+  box-shadow: 0 0 10px theme('colors.blue.400'),
+              inset 0 0 5px theme('colors.blue.400');
 }
 
 /* Grid pattern background */
 .grid-bg {
   background-image: 
-    linear-gradient(to right, rgba(219, 39, 119, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(219, 39, 119, 0.1) 1px, transparent 1px);
+    linear-gradient(to right, rgba(96, 165, 250, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(96, 165, 250, 0.1) 1px, transparent 1px);
   background-size: 30px 30px;
+}
+
+/* Effets 3D pour les cartes */
+.card-3d {
+  @apply transition-all duration-300;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d:hover {
+  transform: translateY(-5px) rotateX(5deg);
+}
+
+/* Animation de surlignage */
+@keyframes highlight {
+  0% { background-size: 0% 100%; }
+  100% { background-size: 100% 100%; }
+}
+
+.animate-highlight {
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.2) 0%, rgba(103, 232, 249, 0.2) 100%);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-position: 0 100%;
+  animation: highlight 0.5s forwards;
+}
+
+/* Effet brillant */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine 6s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% { transform: rotate(30deg) translateX(-300%); }
+  100% { transform: rotate(30deg) translateX(300%); }
+}
+
+/* Effets typographiques */
+.gradient-text {
+  @apply font-bold;
+  background: linear-gradient(90deg, #60a5fa, #67e8f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Effets de particules de lumière */
+.sparkle {
+  position: relative;
+}
+
+.sparkle::before,
+.sparkle::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  animation: sparkle 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+.sparkle::before {
+  width: 6px;
+  height: 6px;
+  right: -10px;
+  top: 0;
+  background: #67e8f9;
+  animation-delay: 0.5s;
+}
+
+.sparkle::after {
+  width: 4px;
+  height: 4px;
+  left: -8px;
+  bottom: 0;
+  background: #60a5fa;
+  animation-delay: 0s;
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0); }
 }
