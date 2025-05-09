@@ -30,78 +30,74 @@ export default function Home() {
 
   return (
     <main className="min-h-screen grid-bg">
-      {/* Section Hero avec dégradé et effet parallaxe */}
-      <section className="py-24 bg-gradient-to-r from-black via-zinc-900 to-black relative overflow-hidden">
-        {/* Arrière-plan technologique */}
-        <div 
-          className="absolute inset-0 opacity-30"
-          dangerouslySetInnerHTML={{
-            __html: `<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="url(#bg-gradient)" /><rect width="100%" height="100%" fill="url(#grid)" /><defs><linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#000913" /><stop offset="100%" stop-color="#0c1e3e" /></linearGradient><pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e40af" stroke-width="0.5" opacity="0.2" /></pattern></defs><line x1="506.28" y1="57.39" x2="697.81" y2="579.13" stroke="#60a5fa" stroke-width="1" opacity="0.13" /><line x1="695.41" y1="286.10" x2="799.27" y2="308.50" stroke="#60a5fa" stroke-width="1" opacity="0.06" /><line x1="148.96" y1="466.76" x2="689.56" y2="503.42" stroke="#60a5fa" stroke-width="1" opacity="0.08" /><line x1="95.46" y1="423.21" x2="387.54" y2="144.46" stroke="#60a5fa" stroke-width="1" opacity="0.07" /><circle cx="240" cy="120" r="3" fill="#67e8f9" opacity="0.7" class="animate-pulse-slow" /><circle cx="560" cy="480" r="4" fill="#93c5fd" opacity="0.7" class="animate-pulse-slow" /><circle cx="720" cy="300" r="2" fill="#60a5fa" opacity="0.7" class="animate-pulse-slow" /><circle cx="160" cy="420" r="60" fill="url(#radial-blue)" opacity="0.08" /><circle cx="640" cy="180" r="80" fill="url(#radial-cyan)" opacity="0.08" /><defs><radialGradient id="radial-blue" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" stop-color="#60a5fa" stop-opacity="0.8" /><stop offset="100%" stop-color="#60a5fa" stop-opacity="0" /></radialGradient><radialGradient id="radial-cyan" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" stop-color="#67e8f9" stop-opacity="0.8" /><stop offset="100%" stop-color="#67e8f9" stop-opacity="0" /></radialGradient></defs></svg>`
-          }}
-        />
-        
-        {/* Particules/lignes en arrière-plan */}
-        <div className="absolute inset-0 z-0">
-          <svg className="w-full h-full">
-            <rect x="0" y="0" width="100%" height="100%" fill="url(#grid)" />
-            <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(59, 130, 246, 0.1)" strokeWidth="1" />
-              </pattern>
-            </defs>
-          </svg>
-        </div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className={`transform transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="mx-auto mb-8 relative w-32 h-32 rounded-full overflow-hidden border-4 border-blue-400 glow-border">
-              <Image
-                src="/images/profile.jpg"
-                alt={profileData.name}
-                fill
-                className="object-cover"
-              />
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 neon-text">{profileData.name}</h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-300">{profileData.role}</p>
-            <p className="max-w-2xl mx-auto text-lg mb-10 text-gray-400">{profileData.about}</p>
+    {/* Section Hero avec dégradé élégant */}
+    <section className="py-24 relative overflow-hidden">
+      {/* Fond dégradé couvrant toute la largeur et le haut de la page sans cadrillage */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900 to-black opacity-80 z-0"></div>
             
-            <div className="flex flex-wrap justify-center gap-4 mb-16">
-              <Button 
-                variant="default" 
-                className="bg-blue-500 hover:bg-blue-600 shadow-lg shadow-blue-500/20 animate-fade-in"
-                style={{ animationDelay: "0.2s" }}
-                onClick={() => window.location.href = `mailto:${profileData.email}`}
-              >
-                <Mail className="mr-2 h-4 w-4" />
-                Me contacter
-              </Button>
-              <Button 
-                variant="outline" 
-                className="border-blue-500 text-blue-300 hover:bg-blue-900/20 animate-fade-in"
-                style={{ animationDelay: "0.4s" }}
-                onClick={() => window.location.href = profileData.github}
-              >
-                <Github className="mr-2 h-4 w-4" />
-                GitHub
-              </Button>
-            </div>
-            
-            {/* Indicateur de défilement avec espace en dessous */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-              <p className="text-sm text-gray-400 mb-2">Découvrir</p>
-              <ChevronRight className="h-5 w-5 text-blue-400 transform rotate-90" />
-            </div>
+      {/* Points lumineux discrets */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute h-3 w-3 rounded-full bg-blue-400 top-1/4 right-1/4 opacity-30 blur-sm"></div>
+        <div className="absolute h-4 w-4 rounded-full bg-blue-300 top-2/3 left-1/3 opacity-20 blur-sm"></div>
+        <div className="absolute h-2 w-2 rounded-full bg-cyan-300 top-1/3 right-1/3 opacity-40 blur-sm"></div>
+        <div className="absolute h-5 w-5 rounded-full bg-blue-500 top-1/2 left-1/4 opacity-25 blur-sm"></div>
+        <div className="absolute h-6 w-6 rounded-full bg-blue-600 top-3/4 right-1/4 opacity-15 blur-sm"></div>
+        <div className="absolute h-4 w-4 rounded-full bg-blue-700 top-1/4 left-2/3 opacity-35 blur-sm"></div>
+        <div className="absolute h-3 w-3 rounded-full bg-blue-800 top-2/3 right-1/3 opacity-20 blur-sm"></div>
+        <div className="absolute h-2 w-2 rounded-full bg-blue-900 top-1/3 left-1/4 opacity-30 blur-sm"></div>
+        <div className="absolute h-5 w-5 rounded-full bg-blue-100 top-1/2 right-1/4 opacity-10 blur-sm"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 text-center relative z-10">
+        <div className={`transform transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          {/* Photo de profil centrée */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/images/profile.jpg"
+              width={150}
+              height={150}
+              className="rounded-full border-4 border-blue-500 shadow-lg shadow-blue-500/20"
+            />
+          </div>
+          
+          {/* Informations personnelles */}
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+            {profileData.name}
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-gray-300">{profileData.role}</p>
+          <p className="max-w-2xl mx-auto text-lg mb-12 text-gray-400">{profileData.about}</p>
+          
+          {/* Boutons de contact bien structurés */}
+          <div className="flex flex-wrap justify-center gap-6">
+            <Button 
+              variant="default" 
+              size="lg"
+              className="bg-blue-500 hover:bg-blue-600 shadow-md px-8 py-6 text-lg transition-all duration-300"
+              onClick={() => window.location.href = `mailto:${profileData.email}`}
+            >
+              <Mail className="mr-3 h-5 w-5" />
+              M&apos;envoyer un email
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-blue-400 text-blue-300 hover:bg-blue-900/20 px-8 py-6 text-lg transition-all duration-300"
+              onClick={() => window.location.href = profileData.github}
+            >
+              <Github className="mr-3 h-5 w-5" />
+              GitHub
+            </Button>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Section À propos */}
       <section id="about" className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <h2 className="section-title text-white">À propos</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-            <div className="md:col-span-2">
+            <div className="md:col-span-2 bg-zinc-900 border-zinc-800 p-8 rounded-lg shadow-md">
               <p className="text-lg mb-4 text-gray-300">
                 Passionné par la technologie et l&apos;entrepreneuriat, je suis un développeur full stack spécialisé dans le webscraping et l&apos;IA, 
                 actuellement en formation à l&apos;École 42 Nice. À seulement {calculateAge()} ans, j&apos;ai déjà créé plusieurs entreprises 

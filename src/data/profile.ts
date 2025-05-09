@@ -64,7 +64,6 @@ export const profileData = {
         "Conception d'outils d'optimisation pour Vinted et autres plateformes de revente"
       ]
     }
-
   ],
   education: [
     {
@@ -78,7 +77,23 @@ export const profileData = {
       degree: "Formation en développement informatique",
       period: "2021 - Présent",
       description: "Ecole de programmation suivant une pédagogie par projets et apprentissage par les pairs. Validation du tronc commun équivalent à un niveau Bac+3."
+    }
+  ],
+  projects: [
+    {
+      title: "Bleam",
+      description: "Solution SaaS pour professionnels de la vente de seconde main",
+      technologies: ["JavaScript", "Python", "REST API", "IA"]
     },
-
+    {
+      title: "La Ruche",
+      description: "Entreprise de vente de vêtements de seconde main",
+      technologies: ["E-commerce", "Automatisation", "Gestion"]
+    },
+    {
+      title: "Projets 42",
+      description: "Projets techniques réalisés à l'École 42",
+      technologies: ["C", "C++", "Algorithmie", "IA"]
+    }
   ]
 };

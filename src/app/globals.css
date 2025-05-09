@@ -28,7 +28,7 @@
   }
 
   ::selection {
-    @apply bg-pink-600 text-white;
+    @apply bg-blue-600 text-white;
   }
 }
 
@@ -161,15 +161,6 @@
   }
 }
 
-.animate-wave-text {
-  background: linear-gradient(90deg, #60a5fa, #67e8f9, #60a5fa);
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: wave 3s linear infinite;
-}
-
 /* Animation de déplacement de particules */
 @keyframes particleMove {
   0% { transform: translate(0, 0); }
@@ -201,16 +192,13 @@ a {
 /* Effet de néon pour le texte */
 .neon-text {
   @apply text-blue-400;
-  text-shadow: 0 0 5px theme('colors.blue.400'), 
-               0 0 10px theme('colors.blue.400'),
-               0 0 15px theme('colors.blue.500');
+  text-shadow: 0 0 5px theme('colors.blue.400');
 }
 
 /* Glowing border */
 .glow-border {
   @apply border border-blue-400;
-  box-shadow: 0 0 10px theme('colors.blue.400'),
-              inset 0 0 5px theme('colors.blue.400');
+  box-shadow: 0 0 10px theme('colors.blue.400');
 }
 
 /* Grid pattern background */
@@ -244,35 +232,6 @@ a {
   background-size: 0% 100%;
   background-position: 0 100%;
   animation: highlight 0.5s forwards;
-}
-
-/* Effet brillant */
-.shine {
-  position: relative;
-  overflow: hidden;
-}
-
-.shine::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: rotate(30deg);
-  animation: shine 6s infinite linear;
-  pointer-events: none;
-}
-
-@keyframes shine {
-  0% { transform: rotate(30deg) translateX(-300%); }
-  100% { transform: rotate(30deg) translateX(300%); }
 }
 
 /* Effets typographiques */

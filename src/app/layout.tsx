@@ -21,7 +21,9 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 backdrop-blur-lg bg-black/70 border-b border-zinc-800">
           <div className="container mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
-              <h1 className="text-xl font-bold text-blue-400 neon-text sparkle">{profileData.name}</h1>
+              <h1 className="text-2xl font-bold text-blue-300">
+                {profileData.name}
+              </h1>
               <nav className="hidden md:block">
                 <ul className="flex space-x-6">
                   <li><a href="#about" className="text-gray-300 hover:text-blue-300 transition-colors">À propos</a></li>
