@@ -8,6 +8,25 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: `${profileData.name} - ${profileData.role}`,
   description: profileData.about,
+  // Configuration Open Graph pour contrôler l'apparence sur les réseaux sociaux
+  openGraph: {
+    type: 'website',
+    url: 'https://felicien410.github.io/cv',
+    title: `${profileData.name} - ${profileData.role}`,
+    description: profileData.about,
+    siteName: `CV de ${profileData.name}`,
+    // Aucune propriété image définie pour empêcher l'aperçu sur Instagram
+  },
+  // Configuration Twitter Card
+  twitter: {
+    card: 'summary',
+    title: `${profileData.name} - ${profileData.role}`,
+    description: profileData.about,
+  },
+  // Méta-tag supplémentaire pour certaines plateformes
+  other: {
+    'thumbnail': '', // Laissé vide pour éviter une image d'aperçu
+  }
 }
 
 export default function RootLayout({
