@@ -128,7 +128,7 @@ export default function Home() {
             <div className="md:col-span-2 bg-zinc-900 border-zinc-800 p-8 rounded-lg shadow-md">
               <p className="text-lg mb-4 text-gray-300">
                 À {calculateAge()} ans, j&apos;ai déjà créé plusieurs entreprises 
-                dans le domaine de la vente en ligne et du développement de solutions SaaS. Au-delà de l&apos;aspect technique, je m&apos;intéresse également aux stratégies business et à l&apos;expérience utilisateur. Ce qui m&apos;interesse particulièrement, c&apos;est de travailler en équipe sur des projets innovants qui apportent des solutions à des problèmes réels.
+                dans le domaine de la vente de vetements en ligne et du développement de solutions SaaS. Au-delà de l&apos;aspect technique, je m&apos;intéresse également aux stratégies business et à l&apos;expérience utilisateur. Ce qui m&apos;interesse particulièrement, c&apos;est de travailler en équipe sur des projets innovants qui apportent des solutions à des problèmes réels.
               </p>
               <p className="text-lg text-gray-300">
               Je recherche actuellement un stage dans une entreprise innovante où je pourrai mettre à profit mes compétences techniques et ma créativité. Mon objectif est de contribuer à des projets stimulants tout en continuant à développer mes connaissances et compétences dans un environnement professionnel.</p>
