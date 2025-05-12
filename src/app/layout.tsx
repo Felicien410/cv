@@ -1,3 +1,4 @@
+// layout.tsx - Modifier les métadonnées
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -15,20 +16,28 @@ export const metadata: Metadata = {
     title: `${profileData.name} - ${profileData.role}`,
     description: profileData.about,
     siteName: `CV de ${profileData.name}`,
-    // Aucune propriété image définie pour empêcher l'aperçu sur Instagram
+    // Ajout d'une image générique ou logo au lieu de votre photo
+    images: [
+      {
+        url: 'https://felicien410.github.io/cv/images/logo-og.jpg', // Créez une image générique/logo pour les aperçus
+        width: 1200,
+        height: 630,
+        alt: `CV de ${profileData.name}`,
+      },
+    ],
   },
   // Configuration Twitter Card
   twitter: {
     card: 'summary',
     title: `${profileData.name} - ${profileData.role}`,
     description: profileData.about,
+    images: ['https://felicien410.github.io/cv/images/logo-og.jpg'], // Même image générique
   },
-  // Méta-tag supplémentaire pour certaines plateformes
-  other: {
-    'thumbnail': '', // Laissé vide pour éviter une image d'aperçu
-  }
+  // Méta-tags supplémentaires pour influencer le comportement des crawlers
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
-
 export default function RootLayout({
   children,
 }: {

@@ -17,10 +17,17 @@ function getImagePath(path: string): string {
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showProfileImage, setShowProfileImage] = useState(false);
 
-  // Animation au chargement
+  // Animation au chargement et chargement différé de l'image
   useEffect(() => {
     setIsLoaded(true);
+    // Délai court pour s'assurer que l'image se charge uniquement côté client
+    const timer = setTimeout(() => {
+      setShowProfileImage(true);
+    }, 100);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   const calculateAge = () => {
@@ -56,19 +63,28 @@ export default function Home() {
       
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className={`transform transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          {/* Photo de profil centrée */}
+          {/* Photo de profil centrée, chargée conditionnellement */}
           <div className="flex justify-center mb-8">
             <div className="relative w-40 h-40 overflow-hidden rounded-full border-4 border-blue-500 shadow-lg shadow-blue-500/20">
-              <div className="absolute inset-[-0%] w-[100%] h-[120%]">
-                <Image
-                  src={getImagePath("/images/profile.jpg")}
-                  alt="Photo de profil"
-                  fill
-                  sizes="200px"
-                  className="object-cover" 
-                  priority
-                />
-              </div>
+              {showProfileImage && (
+                <div className="absolute inset-[-0%] w-[100%] h-[120%]">
+                  <Image
+                    src={getImagePath("/images/profile.jpg")}
+                    alt="Photo de profil"
+                    fill
+                    sizes="200px"
+                    className="object-cover" 
+                    priority
+                  />
+                </div>
+              )}
+              {!showProfileImage && (
+                <div className="absolute inset-0 bg-blue-900 flex items-center justify-center">
+                  <span className="text-white text-xl font-bold">
+                    {profileData.name.charAt(0)}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
           
