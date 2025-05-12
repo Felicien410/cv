@@ -27,6 +27,7 @@ export const profileData = {
       { name: "Travail d'équipe", level: 85 },
       { name: "Gestion de projet", level: 85 }
     ]
+    
   },
   experience: [
     {
@@ -61,7 +62,7 @@ export const profileData = {
         "Développement de fonctionnalités d'automatisation pour les vendeurs (comptabilité, messagerie, publications)",
         "Implémentation d'un système de gestion avancé des commandes et du stockage",
         "Création d'un CRM évolué avec analyses personnalisées (CA, bénéfices, temps moyen de vente)",
-        "Conception d'outils d'optimisation pour Vinted et autres plateformes de revente"
+        "Conception d'outils d'optimisation pour les plateformes de revente de vetements de seconde main",
       ]
     }
   ],
