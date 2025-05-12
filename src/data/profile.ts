@@ -1,7 +1,7 @@
 export const profileData = {
   name: "Félicien Catteau",
   role: "Développeur Full Stack | Entrepreneur",
-  about: "Développeur spécialisé en webscraping et IA, avec une forte expérience entrepreneuriale. Actuellement étudiant à l'école 42 (niveau équivalent Bac+3) et à la recherche d'un stage. Passionné par le développement de solutions innovantes et la création d'entreprises tech.",
+  about: "Développeur spécialisé en web et IA, avec une forte expérience entrepreneuriale. Actuellement étudiant à l'école 42 (niveau équivalent Bac+3) et à la recherche d'un stage. Passionné par le développement de solutions innovantes et la création d'entreprises tech.",
   dateOfBirth: "08/10/2003",
   email: "felicienctt41@gmail.com",
   phone: "07 79 59 29 95",
@@ -19,7 +19,6 @@ export const profileData = {
     web: [
       { name: "Front-end", level: 70 },
       { name: "Back-end", level: 55 },
-      { name: "Webscraping", level: 95 },
       { name: "REST API", level: 85 }
     ],
     other: [
